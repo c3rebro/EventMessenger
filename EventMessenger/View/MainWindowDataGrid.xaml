@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+	x:Class="EventMessenger.View.MainWindowDataGrid"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
+	xmlns:local="clr-namespace:EventMessenger"
+	xmlns:vm="clr-namespace:EventMessenger.ViewModel"
+	xmlns:v="clr-namespace:EventMessenger.View"
+	
+	Background="Transparent">
+	
+	<UserControl.Resources>
+		<local:BindingProxy x:Key="proxy" Data="{Binding}" />
+		<local:ResourceLoader x:Key="Localization"/>
+		<ContextMenu  x:Key="RowMenu" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Path=DataContext.RowContextMenu}">
+			<ContextMenu.ItemContainerStyle>
+				<Style TargetType="MenuItem" >
+					<Setter
+						Property="HorizontalContentAlignment"
+						Value="Left" />
+					<Setter
+						Property="VerticalContentAlignment"
+						Value="Center" />
+				</Style>
+			</ContextMenu.ItemContainerStyle>
+		</ContextMenu>
+		
+		<ContextMenu  x:Key="EmptySpaceMenu" ItemsSource="{Binding EmptySpaceContextMenu}">
+			<ContextMenu.ItemContainerStyle>
+				<Style TargetType="MenuItem" >
+					<Setter
+						Property="HorizontalContentAlignment"
+						Value="Left" />
+					<Setter
+						Property="VerticalContentAlignment"
+						Value="Center" />
+				</Style>
+			</ContextMenu.ItemContainerStyle>
+		</ContextMenu>
+		
+		<ToolTip x:Key="DescriptionToolTip" BorderBrush="Transparent" Opacity="20" HasDropShadow="True" Content="{Binding Path=EventDescription, UpdateSourceTrigger=PropertyChanged}" />
+	</UserControl.Resources>
+	
+	<Grid>
+		<DataGrid
+			x:Name="MainWindowDataGridControl"
+			ItemsSource="{Binding DataGridSource, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+			AutoGenerateColumns="False"
+			SelectedItem="{Binding SelectedDataGridItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+			CanUserReorderColumns="True"
+			CanUserSortColumns="True"
+			CanUserAddRows="False"
+			Background="Transparent"
+			AlternatingRowBackground="LightGray"
+			ContextMenu="{StaticResource EmptySpaceMenu}"
+			
+			MouseLeftButtonDown="MainWindowDataGridControlMouseButtonDown"
+			MouseRightButtonDown="MainWindowDataGridControlMouseButtonDown">
+			
+			<DataGrid.RowStyle>
+				<Style TargetType="{x:Type DataGridRow}">
+					<Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
+					<Setter Property="ToolTip" Value="{StaticResource DescriptionToolTip}" />
+					<Setter Property="IsSelected" Value="{Binding DataContext.IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+				</Style>
+			</DataGrid.RowStyle>
+			
+			<DataGrid.Columns>				
+				<DataGridTextColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderMainWindowEventName',
+					Source={StaticResource proxy}}"
+					Binding="{Binding Path=EventName, UpdateSourceTrigger=PropertyChanged}" />
+				<DataGridTextColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderMainWindowEventType',
+					Source={StaticResource proxy}}"
+					IsReadOnly="True"
+					Binding="{Binding Path=EventType, Converter={StaticResource Localization}, ConverterParameter={x:Type local:DoorMonEventType}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+				<DataGridTemplateColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderMainWindowResponses',
+					Source={StaticResource proxy}}"
+					IsReadOnly="True">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Grid>
+								<ComboBox
+									ItemsSource="{Binding ResponseCollection}"
+									SelectedIndex="0"
+									SelectedItem="{Binding DataContext.SelectedResponse, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+									DisplayMemberPath="ResponseName"
+									IsReadOnly="True"
+									Margin="3"/>
+							</Grid>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				
+				<DataGridTemplateColumn Header="Status">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Grid>
+								<CheckBox
+									Content="{Binding Data.LocalizationResourceSet,
+									Converter={StaticResource Localization},
+									ConverterParameter='dataGridCellMainWindowEventIsEnabled',
+									Source={StaticResource proxy}}"
+									IsChecked="{Binding Path=IsEnabled, UpdateSourceTrigger=PropertyChanged}"
+									Margin="3"/>
+							</Grid>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				
+				<DataGridTextColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderMainWindowLastOccurrence',
+					Source={StaticResource proxy}}"
+					IsReadOnly="True"
+					Binding="{Binding Path=LastSeenDataGridRowContent, UpdateSourceTrigger=PropertyChanged}" />
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</UserControl>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+	x:Class="EventMessenger.View.ResponseEditorDialogDataGrid" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:vm="clr-namespace:EventMessenger.ViewModel" xmlns:local="clr-namespace:EventMessenger"
+	Background="Transparent">
+	<UserControl.Resources>
+		<local:BindingProxy
+			x:Key="proxy"
+			Data="{Binding}" />
+		<ContextMenu
+			x:Key="RowMenu"
+			ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Path=DataContext.RowContextMenu}" />
+		<ContextMenu
+			x:Key="EmptySpaceMenu"
+			ItemsSource="{Binding EmptySpaceContextMenu}" />
+		<ToolTip
+			x:Key="DescriptionToolTip"
+			BorderBrush="Transparent"
+			Opacity="20"
+			HasDropShadow="False"
+			Content="{Binding Path=ResponseDescription, UpdateSourceTrigger=PropertyChanged}" />
+		<local:ResourceLoader
+			x:Key="Localization" />
+	</UserControl.Resources>
+	
+	<Grid>
+		
+		<DataGrid
+			ItemsSource="{Binding ResponseCollection, UpdateSourceTrigger=PropertyChanged}"
+			AutoGenerateColumns="False"
+			SelectedItem="{Binding SelectedDataGridItem, UpdateSourceTrigger=PropertyChanged}"
+			CanUserReorderColumns="True"
+			CanUserSortColumns="True"
+			CanUserAddRows="False"
+			Background="Transparent"
+			AlternatingRowBackground="LightGray"
+			ContextMenu="{StaticResource EmptySpaceMenu}"
+			x:Name="ResponseEditorDataGrid"
+			MouseLeftButtonDown="ResponseEditorDataGrid_MouseButtonDown"
+			MouseRightButtonUp="ResponseEditorDataGrid_MouseButtonDown">
+			<DataGrid.RowStyle>
+				<Style
+					TargetType="{x:Type DataGridRow}">
+					<Setter
+						Property="ContextMenu"
+						Value="{StaticResource RowMenu}" />
+					<Setter
+						Property="ToolTip"
+						Value="{StaticResource DescriptionToolTip}" />
+					<!-- <Setter
+						Property="IsSelected"
+						Value="{Binding IsSelected}" />  -->
+				</Style>
+			</DataGrid.RowStyle>
+			<DataGrid.Columns>
+				<DataGridTextColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderResponseEditorDialogResponseName',
+					Source={StaticResource proxy}}"
+					Binding="{Binding Path=ResponseName, UpdateSourceTrigger=PropertyChanged}" />
+				<DataGridTextColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderResponseEditorDialogResponseType',
+					Source={StaticResource proxy}}"
+					IsReadOnly="True"
+					Binding="{Binding Path=ResponseType, Converter={StaticResource Localization}, ConverterParameter={x:Type local:GeneralResponseTypes}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+				<DataGridTemplateColumn
+					Header="Status">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Grid>
+								<CheckBox
+									 Content="{Binding Data.LocalizationResourceSet,
+									Converter={StaticResource Localization},
+									ConverterParameter='dataGridCellResponseEditorDialogResponseIsEnabled',
+									Source={StaticResource proxy}}"  
+									IsChecked="{Binding Path=IsEnabled, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+									Margin="3" />
+							</Grid>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderResponseEditorDialogHasSchedule',
+					Source={StaticResource proxy}}">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Grid>
+								<CheckBox
+									Content="{Binding Data.LocalizationResourceSet,
+									Converter={StaticResource Localization},
+									ConverterParameter='dataGridCellResponseEditorDialogResponseHasSchedule',
+									Source={StaticResource proxy}}"
+									IsChecked="{Binding Path=HasSchedule, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+									IsEnabled="False"
+									Margin="3" /> <!--"{Binding DataContext.HasSchedule, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type vm:ResponseEditorDialogViewModel}}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"-->
+							</Grid>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+	
+	</Grid>
+</UserControl>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="EventMessenger.View.ResponseConfigurationDialogTelegramMessageResponse"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:v="clr-namespace:EventMessenger.View"
+	xmlns:vm="clr-namespace:EventMessenger.ViewModel"
+	xmlns:dlgs="clr-namespace:MvvmDialogs.Behaviors"
+	xmlns:local="clr-namespace:EventMessenger"
+	
+	dlgs:DialogBehavior.DialogViewModels="{Binding Dialogs}"
+	
+	Title="{Binding Caption}"
+	WindowStartupLocation="CenterOwner"
+	MinHeight="200"
+	MinWidth="400"
+	TabIndex="5"
+	Height="355"
+	Width="48">
+	
+	<Window.Resources>
+		<local:ResourceLoader
+			x:Key="Localization" />
+	</Window.Resources>
+	<Grid>
+		<Grid
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Stretch"
+			Margin="0,0,0,0"
+			VerticalAlignment="Stretch">
+			<Button
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='buttonResponseEditorConfigDialogTelegramMessageDialogOK' }"
+				Command="{Binding OKCommand}"
+				TabIndex="3"
+				Width="150"
+				Height="23"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Bottom"
+				Margin="8,0,0,8" />
+			<Button
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='buttonResponseEditorConfigDialogTelegramMessageDialogCancel' }"
+				Command="{Binding CancelCommand}"
+				TabIndex="4"
+				Width="150"
+				Height="23"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Bottom"
+				Margin="0,0,8,8" />
+			<Label
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='labelResponseEditorConfigDialogTelegramMessageDialogMessageToSend' }"
+				Height="26"
+				Width="118"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,124.5,0,0" />
+			<TextBox
+				Text="{Binding TelegramMessage}"
+				ToolTip="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='toolTipResponseEditorConfigDialogTelegramMessageDialogMessageToolTip' }"
+				ToolTipService.ShowDuration="30000"
+				AcceptsReturn="True"
+				AcceptsTab="True"
+				AutoWordSelection="True"
+				HorizontalScrollBarVisibility="Auto"
+				IsInactiveSelectionHighlightEnabled="False"
+				VerticalScrollBarVisibility="Auto"
+				TabIndex="2"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				Margin="144,123,8,39" />
+			<Label
+				Content="Telegram Bot"
+				Height="26"
+				Width="128"
+				RenderTransformOrigin="0.5,0.5"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,10,0,0" />
+			<Button
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='labelResponseEditorConfigDialogTelegramMessageDialogAddBot' }"
+				Command="{Binding AddBot}"
+				Height="23"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Top"
+				Margin="271,44,8,0" />
+			<Label
+				Height="26"
+				Width="128"
+				RenderTransformOrigin="0.5,0.5"
+				Content="Status"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,75,0,0" />
+			<TextBox
+				Text="{Binding StatusMessage}"
+				ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+				TabIndex="1"
+				Height="26"
+				MaxLines="1"
+				IsTabStop="False"
+				IsReadOnly="True"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Top"
+				Margin="144,75,8,0" />
+			<ComboBox
+				ItemsSource="{Binding Path=TelegramBotObjectCollection, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+				DisplayMemberPath="BotName"
+				SelectedItem="{Binding SelectedTelegramBotObject, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+				Height="26"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Top"
+				Margin="144,10,8,0" />
+			<Button
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='labelResponseEditorConfigDialogTelegramMessageDialogRemoveBot' }"
+				Command="{Binding RemoveBot}"
+				Height="23"
+				Width="119"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="144,44,0,0" />
+		</Grid>
+	</Grid>
+</Window>

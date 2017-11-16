@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="EventMessenger.View.ScheduleConfigurationDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:EventMessenger" xmlns:vm="clr-namespace:EventMessenger.ViewModel" xmlns:v="clr-namespace:EventMessenger.View" xmlns:dlgs="clr-namespace:MvvmDialogs.Behaviors"
+	dlgs:DialogBehavior.DialogViewModels="{Binding Dialogs}"
+	Title="{Binding Caption}"
+	WindowStartupLocation="CenterOwner"
+	ResizeMode="NoResize"
+	Height="452"
+	Width="603">
+	<Window.Resources>
+		<local:ResourceLoader
+			x:Key="Localization" />
+	</Window.Resources>
+	<Grid
+		Grid.Column="0"
+		Grid.Row="0"
+		HorizontalAlignment="Stretch"
+		VerticalAlignment="Stretch"
+		Margin="0,0,0,0"
+		RenderTransformOrigin="0.5,0.5">
+		<Grid
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Stretch"
+			Margin="10,184,12,39">
+			<v:ScheduleConfigurationDataGrid
+				TabIndex="9"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				Margin="0,0,0,0" />
+		</Grid>
+		<GroupBox
+			Header="{Binding LocalizationResourceSet,&#xD;&#xA;&#x9;&#x9;&#x9;Converter={StaticResource Localization},&#xD;&#xA;&#x9;&#x9;&#x9;ConverterParameter='groupBoxScheduleConfigDialogBegin' }"
+			Width="281"
+			Height="95"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="10,8,0,0">
+			<Canvas>
+				<DatePicker
+					SelectedDate="{Binding BeginDate,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;UpdateSourceTrigger=PropertyChanged,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Mode=TwoWay}"
+					Canvas.Top="8"
+					Height="26"
+					Width="150"
+					Canvas.Left="107" />
+				<Label
+					Content="{Binding LocalizationResourceSet,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Converter={StaticResource Localization},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ConverterParameter='labelScheduleConfigDialogBeginDate' }"
+					Canvas.Left="8"
+					Canvas.Top="8"
+					Height="26"
+					Width="90" />
+				<Label
+					Content="{Binding LocalizationResourceSet,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Converter={StaticResource Localization},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ConverterParameter='labelScheduleConfigDialogBeginTime' }"
+					Height="26"
+					Canvas.Top="39"
+					Canvas.Left="8"
+					Width="90" />
+				<TextBox
+					Text="{Binding StartTime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+					x:Name="startTimeTextBox"
+					MouseWheel="TextBoxStartTimeMouseWheelUsed"
+					Height="25"
+					Canvas.Top="40"
+					Width="115"
+					Canvas.Left="106">
+					<TextBox.Resources>
+						<Style
+							TargetType="TextBox"
+							x:Name="startTimeTextBox">
+							<Style.Triggers>
+								<DataTrigger
+									Binding="{Binding StartTimeHasWrongFormat}"
+									Value="False">
+									<Setter
+										Property="Foreground"
+										Value="Black" />
+									<Setter
+										Property="Background"
+										Value="White" />
+									<Setter
+										Property="FontWeight"
+										Value="Normal" />
+								</DataTrigger>
+								<DataTrigger
+									Binding="{Binding StartTimeHasWrongFormat}"
+									Value="True">
+									<Setter
+										Property="Foreground"
+										Value="Black" />
+									<Setter
+										Property="Background"
+										Value="OrangeRed" />
+									<Setter
+										Property="FontWeight"
+										Value="Normal" />
+								</DataTrigger>
+							</Style.Triggers>
+						</Style>
+					</TextBox.Resources>
+				</TextBox>
+				<Label
+					Content="Uhr"
+					Height="26"
+					Width="38"
+					Canvas.Top="39"
+					Canvas.Left="223" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox
+			Header="Ende"
+			Height="95"
+			Grid.Column="0"
+			Grid.Row="0"
+			VerticalAlignment="Top"
+			Margin="300,9,12,0">
+			<Canvas>
+				<DatePicker
+					SelectedDate="{Binding EndDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+					Canvas.Top="8"
+					Height="26"
+					Width="150"
+					Canvas.Left="107" />
+				<Label
+					Content="{Binding LocalizationResourceSet,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Converter={StaticResource Localization},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ConverterParameter='labelScheduleConfigDialogEndDate' }"
+					Canvas.Left="8"
+					Canvas.Top="8"
+					Height="26"
+					Width="90" />
+				<Label
+					Content="{Binding LocalizationResourceSet,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Converter={StaticResource Localization},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ConverterParameter='labelScheduleConfigDialogEndTime' }"
+					Height="26"
+					Canvas.Left="8"
+					Canvas.Top="39"
+					Width="90" />
+				<TextBox
+					Text="{Binding EndTime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+					x:Name="endTimeTextBox"
+					MouseWheel="TextBoxEndTimeMouseWheelUsed"
+					Height="25"
+					Canvas.Top="40"
+					Width="114"
+					Canvas.Left="107">
+					<TextBox.Resources>
+						<Style
+							TargetType="TextBox"
+							x:Name="endTimeTextBox">
+							<Style.Triggers>
+								<DataTrigger
+									Binding="{Binding EndTimeHasWrongFormat}"
+									Value="False">
+									<Setter
+										Property="Foreground"
+										Value="Black" />
+									<Setter
+										Property="Background"
+										Value="White" />
+									<Setter
+										Property="FontWeight"
+										Value="Normal" />
+								</DataTrigger>
+								<DataTrigger
+									Binding="{Binding EndTimeHasWrongFormat}"
+									Value="True">
+									<Setter
+										Property="Foreground"
+										Value="Black" />
+									<Setter
+										Property="Background"
+										Value="OrangeRed" />
+									<Setter
+										Property="FontWeight"
+										Value="Normal" />
+								</DataTrigger>
+							</Style.Triggers>
+						</Style>
+					</TextBox.Resources>
+				</TextBox>
+				<Label
+					Content="{Binding LocalizationResourceSet,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Converter={StaticResource Localization},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ConverterParameter='labelScheduleConfigDialogAMPM24h' }"
+					Height="26"
+					Width="38"
+					Canvas.Top="39"
+					Canvas.Left="223" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox
+			Header="{Binding LocalizationResourceSet,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Converter={StaticResource Localization},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ConverterParameter='labelScheduleConfigDialogRepeatType' }"
+			Width="281"
+			Height="64"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="10,112,0,0">
+			<Canvas
+				HorizontalAlignment="Stretch">
+				<ComboBox
+					ItemsSource="{local:Enumerate {x:Type local:ScheduleRepeatType}}"
+					SelectedItem="{Binding SelectedRepeatType, Converter={StaticResource Localization}, ConverterParameter={x:Type local:ScheduleRepeatType}, Mode=TwoWay}"
+					Height="26"
+					Canvas.Top="8"
+					Canvas.Left="110"
+					Width="150" />
+				<Label
+					Content="{Binding LocalizationResourceSet,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Converter={StaticResource Localization},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ConverterParameter='labelScheduleConfigDialogRepeat' }"
+					Height="26"
+					Canvas.Top="8"
+					Canvas.Left="8"
+					Width="89" />
+			</Canvas>
+		</GroupBox>
+		<Button
+			Content="Hinzufügen"
+			Command="{Binding AddDateTimeSpanCommand}"
+			Height="23"
+			Width="282"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,137,12,0" />
+		<Button
+			Content="OK"
+			Command="{Binding OKCommand}"
+			Width="120"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			Height="23"
+			VerticalAlignment="Bottom"
+			Margin="10,0,0,8" />
+		<Button
+			Content="Cancel"
+			Command="{Binding CancelCommand}"
+			Grid.Column="0"
+			Grid.Row="0"
+			Width="120"
+			HorizontalAlignment="Right"
+			Height="23"
+			VerticalAlignment="Bottom"
+			Margin="0,0,12,8" />
+	</Grid>
+</Window>

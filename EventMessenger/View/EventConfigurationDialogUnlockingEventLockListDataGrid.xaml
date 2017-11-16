@@ -1,0 +1,46 @@
+<UserControl
+	x:Class="EventMessenger.View.EventConfigurationDialogUnlockingEventLockListDataGrid"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:vm="clr-namespace:EventMessenger.ViewModel"
+	xmlns:local="clr-namespace:EventMessenger"
+	
+	Background="Transparent">
+	
+	<UserControl.Resources>
+		<local:BindingProxy x:Key="proxy" Data="{Binding}" />
+		<local:ResourceLoader x:Key="Localization"/>
+	</UserControl.Resources>
+	
+	<Grid>
+		<DataGrid
+			ItemsSource="{Binding LockModels}"
+			AutoGenerateColumns="False"
+			SelectedItem="{Binding SelectedLockItem}"
+			CanUserReorderColumns="True"
+			CanUserAddRows="False"
+			CanUserSortColumns="True"
+			AlternatingRowBackground="LightGray"
+			Background="Transparent">
+			
+			<DataGrid.Columns>
+				<DataGridTextColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderUnlockingEventConfigDialogLockName',
+					Source={StaticResource proxy}}"
+					IsReadOnly="True"
+					Binding="{Binding Path=LockName, UpdateSourceTrigger=PropertyChanged}" />
+				<DataGridTextColumn
+					Header="{Binding Data.LocalizationResourceSet,
+					Converter={StaticResource Localization},
+					ConverterParameter='dataGridHeaderUnlockingEventConfigDialogLockPHI',
+					Source={StaticResource proxy}}"
+					IsReadOnly="True"
+					Binding="{Binding Path=LockPHI, UpdateSourceTrigger=PropertyChanged}" />
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</UserControl>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="EventMessenger.View.EventConfigurationDialogInputEvent" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:EventMessenger"
+	Title="{Binding Caption}"
+	Width="290"
+	MinHeight="190"
+	MaxHeight="190"
+	MinWidth="290"
+	Height="190"
+	WindowStartupLocation="CenterOwner">
+	<Window.Resources>
+		<local:ResourceLoader
+			x:Key="Localization" />
+	</Window.Resources>
+	<Grid>
+		<Grid
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Stretch"
+			Margin="0,0,0,0">
+			<Label
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='labelInputEventConfigDialogInputNr' }"
+				Height="26"
+				Width="126"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,8,0,0" />
+			<ComboBox
+				ItemsSource="{local:Enumerate {x:Type local:InputsByName}}"
+				SelectedItem="{Binding SelectedInputName, Converter={StaticResource Localization}, ConverterParameter={x:Type local:InputsByName}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+				Height="26"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Top"
+				Margin="142,8,8,0" />
+			<Label
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='labelInputEventConfigDialogEdgeDetection' }"
+				Width="126"
+				Height="26"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,42,0,0" />
+			<ComboBox
+				ItemsSource="{local:Enumerate {x:Type local:InputEdgeTriggerType}}"
+				SelectedItem="{Binding SelectedInputTriggerType, Converter={StaticResource Localization}, ConverterParameter={x:Type local:InputEdgeTriggerType}, UpdateSourceTrigger=PropertyChanged}"
+				Height="26"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Top"
+				Margin="142,42,8,0" />
+			<Label
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='labelInputEventConfigDialogAddress' }"
+				Height="26"
+				Width="126"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,76,0,0" />
+			<TextBox
+				Text="{Binding LockNodeAddress, UpdateSourceTrigger=PropertyChanged}"
+				Height="26"
+				Grid.Column="0"
+				Grid.Row="0"
+				VerticalAlignment="Top"
+				Margin="142,76,8,0">
+				<TextBox.Resources>
+					<Style
+						TargetType="TextBox">
+						<Style.Triggers>
+							<DataTrigger
+								Binding="{Binding IsValidAddress}"
+								Value="True">
+								<Setter
+									Property="Foreground"
+									Value="Green" />
+								<Setter
+									Property="Background"
+									Value="White" />
+								<Setter
+									Property="FontWeight"
+									Value="Normal" />
+							</DataTrigger>
+							<DataTrigger
+								Binding="{Binding IsValidAddress}"
+								Value="False">
+								<Setter
+									Property="Foreground"
+									Value="Black" />
+								<Setter
+									Property="Background"
+									Value="Red" />
+								<Setter
+									Property="FontWeight"
+									Value="Normal" />
+							</DataTrigger>
+						</Style.Triggers>
+					</Style>
+				</TextBox.Resources>
+			</TextBox>
+			<Button
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='buttonInputEventConfigDialogOK' }"
+				Command="{Binding OKCommand}"
+				Width="75"
+				Height="23"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Bottom"
+				Margin="8,0,0,7"
+				IsDefault="True" />
+			<Button
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='buttonInputEventConfigDialogCancel' }"
+				Command="{Binding CancelCommand}"
+				Width="75"
+				Height="23"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Bottom"
+				Margin="0,0,8,7"
+				IsCancel="True" />
+		</Grid>
+	</Grid>
+</Window>

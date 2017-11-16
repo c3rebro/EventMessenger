@@ -1,0 +1,52 @@
+<Application x:Class="EventMessenger.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EventMessenger"
+             xmlns:vm="clr-namespace:EventMessenger.ViewModel"
+             xmlns:view="clr-namespace:EventMessenger.View"
+             xmlns:pre="clr-namespace:EventMessenger.Presenters"
+             xmlns:ti="http://www.hardcodet.net/taskbar"
+             StartupUri="View\MainWindow.xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             d1p1:Ignorable="d"
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+	<Application.Resources>
+		<ResourceDictionary>
+			<vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:EventMessenger.ViewModel" />
+
+			<view:CustomDialogBox x:Key="{x:Type vm:CustomDialogViewModel}" x:Shared="False" />
+			<view:ScheduleConfigurationDialog x:Key="{x:Type vm:ScheduleConfigurationDialogViewModel}" x:Shared="False" />
+			<view:EventEditorDialog x:Key="{x:Type vm:EventEditorDialogViewModel}" x:Shared="False" />
+			<view:ResponseEditorDialog x:Key="{x:Type vm:ResponseEditorDialogViewModel}" x:Shared="False" />
+			<view:ResponseConfigurationDialogTelegramMessageResponse x:Key="{x:Type vm:ResponseConfigurationDialogTelegramMessageResponseViewModel}" x:Shared="False" />
+			<view:EventConfigurationDialogUnlockingEvent x:Key="{x:Type vm:EventConfigurationDialogUnlockingEventViewModel}" x:Shared="False" />
+			<view:EventConfigurationDialogInputEvent x:Key="{x:Type vm:EventConfigurationDialogInputEventViewModel}" x:Shared="False" />
+			<view:EventConfigurationDialogDoorMonEvent x:Key="{x:Type vm:EventConfigurationDialogDoorMonEventViewModel}" x:Shared="False" />
+			<view:ResponseConfigurationDialogEMailResponse x:Key="{x:Type vm:ResponseConfigurationDialogEMailMessageResponseViewModel}" x:Shared="False" />
+			<view:ResponseConfigurationDialogEMailResponseSMTPSettings x:Key="{x:Type vm:ResponseConfigurationDialogEMailResponseSMTPSettingsViewModel}" x:Shared="False" />
+			<view:ResponseConfigurationDialogTelegramBotConfigurationDialog x:Key="{x:Type vm:ResponseConfigurationDialogTelegramBotConfigurationDialogViewModel}" x:Shared="False" />
+			<view:ResponseConfigurationDialogKMTronicDeviceConfiguration x:Key="{x:Type vm:ResponseConfigurationDialogKMTronicDeviceConfigurationViewModel}" x:Shared="False" />
+			<view:ResponseConfigurationDialogKMTronicDeviceWebRelayConfiguration x:Key="{x:Type vm:ResponseConfigurationDialogKMTronicDeviceWebRelayConfigurationDialogViewModel}" x:Shared="False" />
+			
+			<pre:MessageBoxPresenter x:Key="{x:Type vm:MessageBoxViewModel}" />
+			<pre:OpenFileDialogPresenter x:Key="{x:Type vm:OpenFileDialogViewModel}" />
+			<pre:SaveFileDialogPresenter x:Key="{x:Type vm:SaveFileDialogViewModel}" />
+			
+			<ti:TaskbarIcon x:Key="TrayNotifyIcon" > <!--Visibility="{Binding ToolTipVisibility, Mode=TwoWay}"-->
+<!--				<ti:TaskbarIcon.TrayToolTip>
+					<Border
+						Background="White"
+						BorderBrush="Black"
+						BorderThickness="1"
+						CornerRadius="4"
+						Width="160"
+						Height="40">
+						<TextBlock
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center" />
+					</Border>
+				</ti:TaskbarIcon.TrayToolTip>-->
+			</ti:TaskbarIcon>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

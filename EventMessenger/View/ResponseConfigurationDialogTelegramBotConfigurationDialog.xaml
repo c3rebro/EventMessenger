@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="EventMessenger.View.ResponseConfigurationDialogTelegramBotConfigurationDialog"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:EventMessenger"
+	xmlns:v="clr-namespace:EventMessenger.View"
+	xmlns:vm="clr-namespace:EventMessenger.ViewModel"
+	xmlns:dlgs="clr-namespace:MvvmDialogs.Behaviors"
+	dlgs:DialogBehavior.DialogViewModels="{Binding Dialogs}"
+	
+	Title="EventMessenger.View"
+	WindowStartupLocation="CenterOwner"
+	Height="187"
+	Width="470">
+	
+	<Window.Resources>
+		<local:ResourceLoader
+			x:Key="Localization" />
+	</Window.Resources>
+	
+	<Grid>
+		<Grid
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Stretch"
+			Margin="0,0,0,0">
+			<Label
+				Content="Telegram Bot Token"
+				Height="26"
+				Width="128"
+				RenderTransformOrigin="0.5,0.5"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,8,0,0" />
+			<TextBox
+				Text="{Binding TelegramToken}"
+				TabIndex="1"
+				MaxLines="1"
+				IsTabStop="False"
+				Height="26"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Top"
+				Margin="134,8,8,0" />
+			<Button
+				Content="{Binding LocalizationResourceSet,
+				Converter={StaticResource Localization},
+				ConverterParameter='buttonResponseEditorConfigDialogTelegramBotDialogConnect' }"
+				Command="{Binding ConnectToBot}"
+				Height="23"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Top"
+				Margin="134,42,8,0" />
+			<Label
+				Height="26"
+				Width="128"
+				RenderTransformOrigin="0.5,0.5"
+				Content="Status"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,73,0,0" />
+			<TextBox
+				Text="{Binding StatusMessage}"
+				ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+				TabIndex="1"
+				MaxLines="1"
+				IsTabStop="False"
+				IsReadOnly="True"
+				Height="26"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Top"
+				Margin="134,73,8,0" />
+			<Button
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='buttonResponseEditorConfigDialogTelegramBotDialogOK' }"
+				Command="{Binding OKCommand}"
+				Width="75"
+				Height="23"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,121,0,0" />
+			<Button
+				Content="{Binding LocalizationResourceSet,Converter={StaticResource Localization},ConverterParameter='buttonResponseEditorConfigDialogTelegramBotDialogCancel' }"
+				Command="{Binding CancelCommand}"
+				Width="75"
+				Height="23"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Top"
+				Margin="0,121,8,0" />
+		</Grid>
+	</Grid>
+</Window>

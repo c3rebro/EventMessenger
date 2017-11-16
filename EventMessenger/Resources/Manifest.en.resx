@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="toolTipCaption" xml:space="preserve">
+    <value>Hint:</value>
+  </data>
+  <data name="messageBoxRestartRequiredCaption" xml:space="preserve">
+    <value>Restart Required</value>
+  </data>
+  <data name="messageBoxRestartRequiredMessage" xml:space="preserve">
+    <value>The Software needs to be restarted in Order to apply these changes. Click 'OK' to proceed.</value>
+  </data>
+  <data name="menuItemFileHeader" xml:space="preserve">
+    <value>_File</value>
+  </data>
+  <data name="menuItemExitHeader" xml:space="preserve">
+    <value>_Exit</value>
+  </data>
+  <data name="menuItemEditHeader" xml:space="preserve">
+    <value>_Edit</value>
+  </data>
+  <data name="menuItemOptionsHeader" xml:space="preserve">
+    <value>_Options</value>
+  </data>
+  <data name="menuItemOpenProjectHeader" xml:space="preserve">
+    <value>_Open Project...</value>
+  </data>
+  <data name="menuItemSaveProjectHeader" xml:space="preserve">
+    <value>_Save As...</value>
+  </data>
+  <data name="menuItemCopyToClipboardHeader" xml:space="preserve">
+    <value>_Copy to Clipboard</value>
+  </data>
+  <data name="menuItemPasteFromClipboardHeader" xml:space="preserve">
+    <value>_Paste from Clipboard</value>
+  </data>
+  <data name="menuItemHelpHeader" xml:space="preserve">
+    <value>_Help</value>
+  </data>
+  <data name="menuItemCheckForUpdatesHeader" xml:space="preserve">
+    <value>_Download and Install Updates automatically</value>
+  </data>
+  <data name="menuItemHelpTopicsHeader" xml:space="preserve">
+    <value>Help _Topics</value>
+  </data>
+  <data name="menuItemSaveHeader" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ENUM.Input3" xml:space="preserve">
+    <value>Input 3</value>
+  </data>
+  <data name="ENUM.Input2" xml:space="preserve">
+    <value>Input 2</value>
+  </data>
+  <data name="ENUM.Input1" xml:space="preserve">
+    <value>Input 1</value>
+  </data>
+  <data name="ENUM.RisingEdge" xml:space="preserve">
+    <value>Rising Edge</value>
+  </data>
+  <data name="ENUM.FallingEdge" xml:space="preserve">
+    <value>Falling Edge</value>
+  </data>
+  <data name="ENUM.BothEdges" xml:space="preserve">
+    <value>Both</value>
+  </data>
+  <data name="dataGridHeaderMainWindowEventName" xml:space="preserve">
+    <value>Event Name</value>
+  </data>
+  <data name="dataGridHeaderMainWindowEventType" xml:space="preserve">
+    <value>Event Type</value>
+  </data>
+  <data name="dataGridHeaderMainWindowResponses" xml:space="preserve">
+    <value>Responses</value>
+  </data>
+  <data name="dataGridHeaderMainWindowLastOccurrence" xml:space="preserve">
+    <value>Last Seen</value>
+  </data>
+  <data name="contextMenuItemAddNewEvent" xml:space="preserve">
+    <value>Add new Event...</value>
+  </data>
+  <data name="windowCaptionEventEditorWindow" xml:space="preserve">
+    <value>Add / Edit Event...</value>
+  </data>
+  <data name="ENUM.InputEvent" xml:space="preserve">
+    <value>Input Event</value>
+  </data>
+  <data name="ENUM.DoorMonitoringEvent" xml:space="preserve">
+    <value>Door Monitoring Event</value>
+  </data>
+  <data name="ENUM.UnlockingEvent" xml:space="preserve">
+    <value>Unlocking Event</value>
+  </data>
+  <data name="dataGridHeaderUnlockEventConfigDialogTriggerType" xml:space="preserve">
+    <value>Access Type</value>
+  </data>
+  <data name="dataGridHeaderUnlockEventConfigDialogAttachedLocks" xml:space="preserve">
+    <value>Attached Locks</value>
+  </data>
+  <data name="groupBoxUnlockEventConfigEventConfiguration" xml:space="preserve">
+    <value>Unlocking Event Configuration</value>
+  </data>
+  <data name="buttonEventEditorDialogConfigureBehavior" xml:space="preserve">
+    <value>Configure Event...</value>
+  </data>
+  <data name="groupBoxEventEditorDialogConfigSettings" xml:space="preserve">
+    <value>Event Setup</value>
+  </data>
+  <data name="labelEventEditorDialogDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="labelEventEditorDialogEventType" xml:space="preserve">
+    <value>Event Type</value>
+  </data>
+  <data name="textBoxEventEditorWindowEventName" xml:space="preserve">
+    <value>Enter Name for Event</value>
+  </data>
+  <data name="textBoxEventEditorWindowEventDescription" xml:space="preserve">
+    <value>Enter Description for Event (optional)</value>
+  </data>
+  <data name="ENUM.DoorHasBeenLocked" xml:space="preserve">
+    <value>Door has been locked</value>
+  </data>
+  <data name="ENUM.DoorHasBeenClosedAfterTooLongOpened" xml:space="preserve">
+    <value>Door has been closed after too long open</value>
+  </data>
+  <data name="ENUM.DoorHasBeenOpened" xml:space="preserve">
+    <value>Door has been opened</value>
+  </data>
+  <data name="ENUM.DoorHasBeenSecured" xml:space="preserve">
+    <value>Door has been secured</value>
+  </data>
+  <data name="ENUM.DoorHasBeenClosed" xml:space="preserve">
+    <value>Door has been closed</value>
+  </data>
+  <data name="ENUM.DoorHasBeenManipulated" xml:space="preserve">
+    <value>Door has been manipulated</value>
+  </data>
+  <data name="ENUM.DoorSensorError" xml:space="preserve">
+    <value>Door Sensor Error</value>
+  </data>
+  <data name="ENUM.DoorStaysOpenTooLong" xml:space="preserve">
+    <value>Door stays open too long</value>
+  </data>
+  <data name="windowCaptionEventConfigurationDialogUnlockingEvent" xml:space="preserve">
+    <value>Add Unlocking Event</value>
+  </data>
+  <data name="windowCaptionEventConfigurationDialogDoorMonitoringEvent" xml:space="preserve">
+    <value>Add Door Monitoring Event</value>
+  </data>
+  <data name="groupBoxDoorMonitoringEventConfigDialogLockSummary" xml:space="preserve">
+    <value>Events to Trigger</value>
+  </data>
+  <data name="buttonDoorMonitoringEventConfigDialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonDoorMonitoringEventConfigDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="groupBoxDoorMonitoringEventConfigDialogAddLocks" xml:space="preserve">
+    <value>Add Lock(s)</value>
+  </data>
+  <data name="labelDoorMonitoringEventConfigDialogLockName" xml:space="preserve">
+    <value>Lock Name</value>
+  </data>
+  <data name="labelDoorMonitoringEventConfigDialogLockPHI" xml:space="preserve">
+    <value>Lock PHI</value>
+  </data>
+  <data name="buttonDoorMonitoringEventConfigDialogAddLock" xml:space="preserve">
+    <value>Add</value>
+    <comment>buttonDoorMonitoringEventConfigDialogAddLock</comment>
+  </data>
+  <data name="buttonDoorMonitoringEventConfigDialogImportFromFile" xml:space="preserve">
+    <value>Import from File</value>
+  </data>
+  <data name="checkBoxDoorMonitoringEventConfigDialogCheckLockNameOrPHI" xml:space="preserve">
+    <value>Consider Lock Name and/or Lock PHI</value>
+  </data>
+  <data name="labelDoorMonitoringEventConfigDialogMonitoringType" xml:space="preserve">
+    <value>Monitoring Type</value>
+  </data>
+  <data name="labelInputEventConfigDialogInputNr" xml:space="preserve">
+    <value>Input Nr.</value>
+  </data>
+  <data name="labelInputEventConfigDialogEdgeDetection" xml:space="preserve">
+    <value>Edge Detection</value>
+  </data>
+  <data name="labelInputEventConfigDialogAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="buttonInputEventConfigDialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonInputEventConfigDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="windowCaptionEventConfigurationDialogInputEvent" xml:space="preserve">
+    <value>Add Input Event</value>
+  </data>
+  <data name="ENUM.AccessDenied" xml:space="preserve">
+    <value>Access Denied</value>
+  </data>
+  <data name="ENUM.AccessGranted" xml:space="preserve">
+    <value>Access Granted</value>
+  </data>
+  <data name="ENUM.TriggerBoth" xml:space="preserve">
+    <value>Trigger Both</value>
+  </data>
+  <data name="labelUnlockingEventConfigDialogAccessType" xml:space="preserve">
+    <value>Access Type</value>
+  </data>
+  <data name="labelUnlockingEventConfigDialogTransponderPHI" xml:space="preserve">
+    <value>Transponder PHI</value>
+  </data>
+  <data name="labelUnlockingEventConfigDialogTransponderName" xml:space="preserve">
+    <value>Transponder Name</value>
+  </data>
+  <data name="buttonUnlockingEventConfigDialogAdd" xml:space="preserve">
+    <value>Apply and Exit</value>
+  </data>
+  <data name="checkBoxUnlockingEventConfigDialogCheckLockNameOrPHI" xml:space="preserve">
+    <value>Consider Lock Name and/or Lock PHI</value>
+  </data>
+  <data name="buttonUnlockingEventConfigDialogImportFromFile" xml:space="preserve">
+    <value>Import from File</value>
+  </data>
+  <data name="buttonUnlockingEventConfigDialogAddLock" xml:space="preserve">
+    <value>Add Lock</value>
+  </data>
+  <data name="labelUnlockingEventConfigDialogLockPHI" xml:space="preserve">
+    <value>Lock PHI</value>
+  </data>
+  <data name="labelUnlockingEventConfigDialogLockName" xml:space="preserve">
+    <value>Lock Name</value>
+  </data>
+  <data name="ENUM.DeviceKNX" xml:space="preserve">
+    <value>Device: KNX</value>
+  </data>
+  <data name="ENUM.MessageEMAIL" xml:space="preserve">
+    <value>Message: EMail</value>
+  </data>
+  <data name="ENUM.MessageTELEGRAM" xml:space="preserve">
+    <value>Message: Telegram IM</value>
+  </data>
+  <data name="groupBoxResponseEditorDialogConfigSettings" xml:space="preserve">
+    <value>Response Setup</value>
+  </data>
+  <data name="labelResponseEditorDialogResponseType" xml:space="preserve">
+    <value>Response Type</value>
+  </data>
+  <data name="labelResponseEditorDialogDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="buttonResponseEditorDialogConfigureBehavior" xml:space="preserve">
+    <value>Configure Response...</value>
+  </data>
+  <data name="groupBoxResponseEditorDialogResponses" xml:space="preserve">
+    <value>Responses</value>
+  </data>
+  <data name="buttonEventEditorConfigDialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonEventEditorConfigDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="buttonResponseEditorDialogAddResponse" xml:space="preserve">
+    <value>Add Response</value>
+  </data>
+  <data name="dataGridCellMainWindowEventIsEnabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="windowCaptionResponseEditorDialog" xml:space="preserve">
+    <value>Add / Edit Response...</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogTelegramBotDialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogTelegramBotDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogTelegramMessageDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogTelegramMessageDialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dataGridCellResponseEditorDialogResponseIsEnabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="dataGridHeaderResponseEditorDialogResponseName" xml:space="preserve">
+    <value>Response Name</value>
+  </data>
+  <data name="dataGridHeaderResponseEditorDialogResponseType" xml:space="preserve">
+    <value>Response Type</value>
+  </data>
+  <data name="dataGridHeaderUnlockingEventConfigDialogLockName" xml:space="preserve">
+    <value>Lock Name</value>
+  </data>
+  <data name="dataGridHeaderUnlockingEventConfigDialogLockPHI" xml:space="preserve">
+    <value>Lock PHI</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogTelegramMessageDialogMessageToSend" xml:space="preserve">
+    <value>Message to Send</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogTelegramMessageDialogAddBot" xml:space="preserve">
+    <value>Add Bot...</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogTelegramMessageDialogRemoveBot" xml:space="preserve">
+    <value>Remove Bot</value>
+  </data>
+  <data name="toolTipResponseEditorConfigDialogTelegramMessageDialogMessageToolTip" xml:space="preserve">
+    <value>"Valid Shortcuts: 
+'$lockname' = will be replaced by the lock that has triggered the event'
+'$lockphi' = ... phi of the lock ...
+'$transpondername' = ... the name of the transponder that was used to trigger the event
+'$transponderphi' = ... phi of the transponder ...
+'$datetime' = ... the date and time the event has been triggered
+'$accessresult' ... access denied / granted"
+
+If omitted, a default message in english language will be sent</value>
+  </data>
+  <data name="defaultMessageTelegramMessageDoorMonitoringMessage" xml:space="preserve">
+    <value>{2}
+
+The Lock with the Name:
+{0}
+and Serial Number (PHI):
+{1}
+has reportet the following Event:
+{3}</value>
+  </data>
+  <data name="defaultMessageTelegramMessageUnlockingEventMessage" xml:space="preserve">
+    <value>{4}
+
+The Transponder whose Owner has the Name:
+{0}
+and the Serial Number (PHI) is:
+{1}
+has been used to try opening the Lock with the Name:
+{2}
+and Serial Number (PHI):
+{3}
+
+the Result was:
+{5}</value>
+  </data>
+  <data name="contextMenuItemEditEvent" xml:space="preserve">
+    <value>Edit Event...</value>
+  </data>
+  <data name="contextMenuItemAddOrEditResponse" xml:space="preserve">
+    <value>Add or Edit Response...</value>
+  </data>
+  <data name="contextMenuItemDeleteSelectedItem" xml:space="preserve">
+    <value>Delete Selected Item</value>
+  </data>
+  <data name="menuItemAutoLoadDBHeader" xml:space="preserve">
+    <value>_Load default Database automatically</value>
+  </data>
+  <data name="messageBoxTelegramBotFoundCaption" xml:space="preserve">
+    <value>Telegram Bot Found</value>
+  </data>
+  <data name="messageBoxTelegramBotFoundMessage" xml:space="preserve">
+    <value>The Database contains at least one Telegram-Bot. The EventMessenger needs to go Online now in Order to make the Bot working. Do you want to establish an Internet Connection now?</value>
+  </data>
+  <data name="messageBoxLoadDefaultDatabaseMessage" xml:space="preserve">
+    <value>The Default Database contains Objects. Do you want to load them into the queue now?</value>
+  </data>
+  <data name="messageBoxLoadDefaultDatabaseCaption" xml:space="preserve">
+    <value>Load Default Database</value>
+  </data>
+  <data name="dataGridCellResponseEditorDialogResponseHasSchedule" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="dataGridHeaderScheduleConfigurationDataGridHeaderEnd" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="dataGridHeaderScheduleConfigurationDataGridHeaderBegin" xml:space="preserve">
+    <value>Begin Time</value>
+  </data>
+  <data name="ENUM.ScheduleRepeatDaily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="ENUM.ScheduleRepeatEverySecondWeek" xml:space="preserve">
+    <value>Every Third Week</value>
+  </data>
+  <data name="ENUM.ScheduleRepeatWeekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="ENUM.ScheduleRepeatEveryThirdWeek" xml:space="preserve">
+    <value>Every Second Week</value>
+  </data>
+  <data name="ENUM.ScheduleRepeatMonthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="dataGridHeaderScheduleConfigurationDataGridHeaderRepeatType" xml:space="preserve">
+    <value>Repeat Type</value>
+  </data>
+  <data name="ENUM.ScheduleRepeatNone" xml:space="preserve">
+    <value>No Recurrence</value>
+  </data>
+  <data name="dataGridHeaderResponseEditorDialogHasSchedule" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="taskBarIconBalloonHeaderNewUnlockingEvent" xml:space="preserve">
+    <value>New Event</value>
+  </data>
+  <data name="taskBarIconBalloonMessageNewUnlockingEvent" xml:space="preserve">
+    <value>A new Unlocking Event has Arrived</value>
+  </data>
+  <data name="buttonCustomDialogBoxOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonCustomDialogBoxCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="groupBoxEMailResponseAddEditMessage" xml:space="preserve">
+    <value>Add / Edit EMail Message</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEMailResponseFromAddress" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEMailResponseToAddress" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEMailResponseSubject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEMailResponseMessageBody" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogEMailResponseSMTPConfig" xml:space="preserve">
+    <value>SMTP Configuration</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogEMailResponseOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogEMailResponseCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="windowCaptionResponseConfigurationDialogEMailResponse" xml:space="preserve">
+    <value>Add / Edit EMail...</value>
+  </data>
+  <data name="windowCaptionScheduleConfigurationDialog" xml:space="preserve">
+    <value>Add / Edit Schedule...</value>
+  </data>
+  <data name="groupBoxScheduleConfigDialogBegin" xml:space="preserve">
+    <value>Begin</value>
+  </data>
+  <data name="labelScheduleConfigDialogBeginDate" xml:space="preserve">
+    <value>Begin Date</value>
+  </data>
+  <data name="labelScheduleConfigDialogEndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="labelScheduleConfigDialogEndTime" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="labelScheduleConfigDialogBeginTime" xml:space="preserve">
+    <value>Begin Time</value>
+  </data>
+  <data name="labelScheduleConfigDialogAMPM24h" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="labelScheduleConfigDialogRepeatType" xml:space="preserve">
+    <value>Configure Repeat Type</value>
+  </data>
+  <data name="labelScheduleConfigDialogRepeat" xml:space="preserve">
+    <value>Repeat</value>
+  </data>
+  <data name="groupBoxUnlockingEventConfigDialogAddLocks" xml:space="preserve">
+    <value>Add Lock(s)</value>
+  </data>
+  <data name="buttonUnlockingEventConfigDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="groupBoxEMailResponseSMTPSettings" xml:space="preserve">
+    <value>SMTP Settings</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEmailResponseSMTPSettingsSMTPServer" xml:space="preserve">
+    <value>SMTP Server</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEmailResponseSMTPSettingsSMTPServerPort" xml:space="preserve">
+    <value>SMTP Port</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEmailResponseSMTPSettingsSMTPUser" xml:space="preserve">
+    <value>SMTP User</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogEMailResponseSMTPConfigOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogEMailResponseSMTPConfigCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEMailResponseSMTPPassword" xml:space="preserve">
+    <value>SMTP Password</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEMailResponseSMTUseSSL" xml:space="preserve">
+    <value>Enable SSL/TLS</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogEMailResponseSMTUseCredentials" xml:space="preserve">
+    <value>Use Credentials</value>
+  </data>
+  <data name="contextMenuItemAddNewResponse" xml:space="preserve">
+    <value>Add new Response...</value>
+  </data>
+  <data name="contextMenuItemEditResponse" xml:space="preserve">
+    <value>Edit Response...</value>
+  </data>
+  <data name="contextMenuItemAddEditSchedule" xml:space="preserve">
+    <value>Add / Edit Schedule</value>
+  </data>
+  <data name="contextMenuItemDeleteResponse" xml:space="preserve">
+    <value>Delete Response</value>
+  </data>
+  <data name="taskBarIconBalloonMessageNewDoorMonitoringEvent" xml:space="preserve">
+    <value>A new Door Monitoring Event has Arrived</value>
+  </data>
+  <data name="taskBarIconBalloonHeaderNewDoorMonitoringEvent" xml:space="preserve">
+    <value>New Event</value>
+  </data>
+  <data name="telegramBotButtonAddUser" xml:space="preserve">
+    <value>Register User</value>
+  </data>
+  <data name="telegramBotButtonBlockUser" xml:space="preserve">
+    <value>Block User</value>
+  </data>
+  <data name="telegramBotMessageWaitForAdministrator" xml:space="preserve">
+    <value>Hello User.
+
+Please be patient and wait for the Administrator to Register your Device.</value>
+  </data>
+  <data name="telegramBotMessageWelcomeAdmin" xml:space="preserve">
+    <value>Welcome Administrator.
+
+Your ID is: "{0}" 
+You can now add or block users. In addition to the administrator, only added users can receive messages from EventMessenger application.</value>
+  </data>
+  <data name="telegramBotMessageWelcomeBackAdmin" xml:space="preserve">
+    <value>Administrator.
+
+Your ID is: "{0}" 
+You are already registered and will receive Messages from EventMessenger Application.</value>
+  </data>
+  <data name="telegramBotMessageNewUserFound" xml:space="preserve">
+    <value>Administrator.
+
+A not yet registered user has contacted the EventMessenger application and asks for rights to read all accociated messages from it. Would you like to grant this by adding the user {0} to your list of registered users? Block this user if you do not want him to be able to read any messages.</value>
+  </data>
+  <data name="ENUM.DeviceKMTronic" xml:space="preserve">
+    <value>Device: KMTronic</value>
+  </data>
+  <data name="taskBarIconBalloonHeaderNewInputEvent" xml:space="preserve">
+    <value>New Event</value>
+  </data>
+  <data name="taskBarIconBalloonMessageNewInputEvent" xml:space="preserve">
+    <value>A new Input Event has Arrived</value>
+  </data>
+  <data name="defaultMessageTelegramMessageInputEventMessage" xml:space="preserve">
+    <value>{3}
+
+{0} with address {2} has been triggered with a {1}. </value>
+  </data>
+  <data name="ENUM.W2CR" xml:space="preserve">
+    <value>Web Relay W2CR</value>
+  </data>
+  <data name="ENUM.W8CR" xml:space="preserve">
+    <value>Web Relay W8CR</value>
+  </data>
+  <data name="ENUM.RelayContactIsToggle" xml:space="preserve">
+    <value>Toggle</value>
+  </data>
+  <data name="ENUM.RelayContactIsStaticOn" xml:space="preserve">
+    <value>Turn On</value>
+  </data>
+  <data name="ENUM.RelayContactIsStaticOff" xml:space="preserve">
+    <value>Turn Off</value>
+  </data>
+  <data name="ENUM.RelayContactIsTimed" xml:space="preserve">
+    <value>Pulse</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogKMTronicContactBehavior" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogKMTronicContactNumber" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogKMTronicContactDuration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="windowCaptionResponseConfigurationDialogAddKMTronicWebRelayContact" xml:space="preserve">
+    <value>Add / Edit Relay Contact...</value>
+  </data>
+  <data name="windowCaptionResponseConfigurationDialogAddKMTronicDevice" xml:space="preserve">
+    <value>Add / Edit KMTronic Device...</value>
+  </data>
+  <data name="groupBoxResponseEditorConfigDialogKMTronicDeviceConfigurationRelayConfig" xml:space="preserve">
+    <value>Relay Configuration</value>
+  </data>
+  <data name="groupBoxResponseEditorConfigDialogKMTronicDeviceConfigurationConnection" xml:space="preserve">
+    <value>Connection</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogKMTronicDeviceConfigurationPortnumber" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogKMTronicDeviceConfigurationHostname" xml:space="preserve">
+    <value>Hostname</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogKMTronicDeviceConfigurationUsername" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogKMTronicDeviceConfigurationPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="labelResponseEditorConfigDialogKMTronicDeviceConfigurationDeviceType" xml:space="preserve">
+    <value>Device Type</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogKMTronicDeviceConfigurationDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="dataGridHeaderKMTronicRelayContactNumber" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="dataGridHeaderKMTronicRelayContactState" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="dataGridHeaderKMTronicRelayContactTime" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="dataGridHeaderKMTronicRelayContactBehavior" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="messageBoxMissingConfigMessage" xml:space="preserve">
+    <value>The Object you tried to add is not fully configured and could not be added.</value>
+  </data>
+  <data name="messageBoxMissingConfigCaption" xml:space="preserve">
+    <value>Missing Configuration</value>
+  </data>
+  <data name="messageBoxEventAlreadyExistMessage" xml:space="preserve">
+    <value>The Event you tried to add, already exists. Be Aware: Name, Description and Type of the Event must be Unique.</value>
+  </data>
+  <data name="messageBoxEventAlreadyExistCaption" xml:space="preserve">
+    <value>Duplicate Event</value>
+  </data>
+  <data name="messageBoxUpdateAvailableMessage" xml:space="preserve">
+    <value>A new version of EventMessenger is available. Would you like to update immediately? Be Aware: Unsaved changes will be lost! Administrative privileges are mandatory.</value>
+  </data>
+  <data name="messageBoxUpdateAvailableCaption" xml:space="preserve">
+    <value>New Version Found</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogKMTronicDeviceConfigurationDialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="messageBoxDuplicateLockCaption" xml:space="preserve">
+    <value>Duplicate Lock Entry</value>
+  </data>
+  <data name="messageBoxDuplicateLockMessage" xml:space="preserve">
+    <value>The Lock you tried to add, already exists. Be Aware: Name and PHI (if defined) of the Lock must be Unique.</value>
+  </data>
+  <data name="messageBoxNoLocksMessage" xml:space="preserve">
+    <value>Maybe you forgot to add locks. Please provide at least one lock.</value>
+  </data>
+  <data name="messageBoxNoLocksCaption" xml:space="preserve">
+    <value>No Locks found</value>
+  </data>
+  <data name="contextMenuItemAddNewRelayContact" xml:space="preserve">
+    <value>Add new Relay Contact...</value>
+  </data>
+  <data name="contextMenuItemEditRelayContact" xml:space="preserve">
+    <value>Edit Relay Contact...</value>
+  </data>
+  <data name="messageBoxNoKnownTelegramUserMessage" xml:space="preserve">
+    <value>Unable to find an Administrator ID. Please send a random Message to your Bot to Connect your Mobile Device with the EventMessenger.</value>
+  </data>
+  <data name="messageBoxNoKnownTelegramUserCaption" xml:space="preserve">
+    <value>Missing Administrator ID</value>
+  </data>
+  <data name="buttonResponseEditorConfigDialogTelegramBotDialogConnect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="messageBoxAskCloseOrTrayMessage" xml:space="preserve">
+    <value>Would you like to keep the application running in the system tray? Be aware that you won't get any responses when the application is not running.</value>
+  </data>
+  <data name="messageBoxAskCloseOrTrayCaption" xml:space="preserve">
+    <value>Close Application</value>
+  </data>
+  <data name="taskBarIconBalloonMessageStillHere" xml:space="preserve">
+    <value>Click here to bring back the main window.</value>
+  </data>
+  <data name="taskBarIconBalloonHeaderStillHere" xml:space="preserve">
+    <value>EventMessenger is still running.</value>
+  </data>
+  <data name="menuItemAutoLoadOnStartupHeader" xml:space="preserve">
+    <value>_Run program automatically on windows startup</value>
+  </data>
+  <data name="textBoxResponseEditorWindowResponseName" xml:space="preserve">
+    <value>Enter Name for Response</value>
+  </data>
+  <data name="textBoxResponseEditorWindowResponseDescription" xml:space="preserve">
+    <value>Enter Description for Response (optional)</value>
+  </data>
+  <data name="messageBoxDuplicateObjectMessage" xml:space="preserve">
+    <value>The Object you tried to add does already Exist.</value>
+  </data>
+  <data name="messageBoxDuplicateObjectCaption" xml:space="preserve">
+    <value>Duplicate Object</value>
+  </data>
+</root>

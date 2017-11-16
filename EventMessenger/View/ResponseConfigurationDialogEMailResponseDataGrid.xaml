@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+	x:Class="EventMessenger.View.ResponseConfigurationDialogEMailResponseDataGrid" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:vm="clr-namespace:EventMessenger.ViewModel"
+	Background="Transparent">
+	
+	<!-- need to change the datacontext here: search in the ancestor
+	(of type window) because resource is bound to (eventobject)model -->
+	<UserControl.Resources>
+		<ContextMenu  x:Key="RowMenu" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Path=DataContext.RowContextMenu}"/>
+	</UserControl.Resources>
+	
+	<Grid>
+		<DataGrid
+			ItemsSource="{Binding EMailCollection}"
+			AutoGenerateColumns="False"
+			SelectedItem="{Binding SelectedEmail}"
+			CanUserAddRows="False"
+			CanUserSortColumns="True"
+			Background="Transparent">
+			<DataGrid.RowStyle>
+				<Style TargetType="{x:Type DataGridRow}">
+					<Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
+				</Style>
+			</DataGrid.RowStyle>
+			<DataGrid.Columns>
+				<DataGridTextColumn
+					Header="From"
+					IsReadOnly="True"
+					Binding="{Binding Path=FromAddress, UpdateSourceTrigger=PropertyChanged}" />
+				<DataGridTextColumn
+					Header="To"
+					IsReadOnly="True"
+					Binding="{Binding Path=ToAddress, UpdateSourceTrigger=PropertyChanged}" />
+				<DataGridTextColumn
+					Header="Subject"
+					Binding="{Binding Path=Subject, UpdateSourceTrigger=PropertyChanged}" />
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</UserControl>

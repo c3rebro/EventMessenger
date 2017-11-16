@@ -1,0 +1,48 @@
+﻿version 0.1.xxxx - xx.yy.zzzz - beta
+
+- optimization and cosmetics
+	- set the correct tab index in kmtronic web relay configuration dialogs
+
+#################################################################################
+version 0.1.6490 - 08.10.2017 - beta - initial version
+
+features:
+
+- autorun on startup
+	- user can select an "autorun" option. arc.exe as a part of eventmessenger will be called with elevated rights to add registry entry with "-runSilent" argument
+- auto check for updates
+	- user can enable a frequelntly check for newer versions. if enabled and eventmessenger.hyperstack.de reports a newer version to the software. user is asked for downloading the installer, depending on the selected language the installer will be in that language
+- help system
+	- a chm help file will be called when pressing "f1" key
+- debugging user created events and responses
+	- user can run a console together with the application to simulate lsm events. thus, one can test events and responses created in the software without any real world setup
+- save and restore
+	- user can save and restore created objects.
+	- except mail password which is encrypted, all information can be modified in the plain xml database.
+- events: unlocking events
+	- supports G2 locks beginning from 2.3.09 FW and G2 Transponders
+	- G1 Transponders are supported together with g2 locks but without Transponder Name. G1 TID is transmitted instead
+	- transponder and lock search phrase as wildcard algorithm
+	- to add more that one transponder at a time seperate them with the ';' character
+- events: door monitoring events
+	- supports door opened, closed, unlocked, too long open and secured events
+	- lock search phrase as wildcard algorithm
+- events: input event
+	- supports ln.r; ln.c; and wnm.rn.er
+- responses: kmtronic web relay
+	- connect to a kmtronic web relay
+	- contact can be switched on, off, toggled and pulsed for up to 1000sec
+- responses: mail message
+	- user can add email with 1 sender, receipents that may be seperated by ';' character, subject and user definable text
+	- user must add a valid server configuration
+- responses: telegram message
+	- user can add a self created bot
+	- first user to talk the the bot is administrator and must grant or deny all following telegram users
+	
+known limitations
+
+- mail server credentials won't be displayed again when reopening the configuration dialog as these are encrypted
+- kmtronic web relay does not support encryption. use hardware pptp if needed
+- time schedule won't recognize overlapping
+- knx not implemented
+- load lock names from file not implemented

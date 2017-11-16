@@ -1,0 +1,84 @@
+﻿<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFiles" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="EventMessenger">
+					<Component Id="EventMessengerExe" Guid="BC3AD5DB-4E0D-4E57-9B68-C9F613FCED32" DiskId="1">
+						<File Id="EventMessenger.exe" Name="EventMessenger.exe" Source="..\EventMessenger\bin\Release\EventMessenger.exe" KeyPath="yes" />
+					</Component>
+					<Component Id="AntlrruntimeDll" Guid="028844C0-A95D-43C8-B8FC-AA5C4B03A35D" DiskId="1">
+						<File Id="antlr.runtime.dll" Name="antlr.runtime.dll" Source="..\EventMessenger\bin\Release\antlr.runtime.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="Antlr3RuntimeDll" Guid="DC689089-9BDC-46FB-9076-A44664364B32" DiskId="1">
+						<File Id="Antlr3.Runtime.dll" Name="Antlr3.Runtime.dll" Source="..\EventMessenger\bin\Release\Antlr3.Runtime.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="Antlr3UtilityDll" Guid="9287761F-2969-4B46-B951-06DFE06B54E8" DiskId="1">
+						<File Id="Antlr3.Utility.dll" Name="Antlr3.Utility.dll" Source="..\EventMessenger\bin\Release\Antlr3.Utility.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="AutofacDll" Guid="138E31A3-737E-48B4-B15A-9207D651BB88" DiskId="1">
+						<File Id="Autofac.dll" Name="Autofac.dll" Source="..\EventMessenger\bin\Release\Autofac.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="CommonLoggingDll" Guid="588CFCAD-D20A-494B-BE79-4907AB04741C" DiskId="1">
+						<File Id="Common.Logging.dll" Name="Common.Logging.dll" Source="..\EventMessenger\bin\Release\Common.Logging.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="GalaSoftMvvmLightDll" Guid="3496E984-615B-43B0-A083-CBE67396875B" DiskId="1">
+						<File Id="GalaSoft.MvvmLight.dll" Name="GalaSoft.MvvmLight.dll" Source="..\EventMessenger\bin\Release\GalaSoft.MvvmLight.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="GalaSoftMvvmLightExtrasDll" Guid="00821C9E-F28E-404D-AC16-75EA30968DB9" DiskId="1">
+						<File Id="GalaSoft.MvvmLight.Extras.dll" Name="GalaSoft.MvvmLight.Extras.dll" Source="..\EventMessenger\bin\Release\GalaSoft.MvvmLight.Extras.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="GalaSoftMvvmLightPlatformDll" Guid="FAA88781-067D-4A2B-8979-B8A4E4533220" DiskId="1">
+						<File Id="GalaSoft.MvvmLight.Platform.dll" Name="GalaSoft.MvvmLight.Platform.dll" Source="..\EventMessenger\bin\Release\GalaSoft.MvvmLight.Platform.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="HardcodetWpfTaskbarNotificationDll" Guid="AAFE0F33-C0B9-482E-9A85-1A2F0DEEF9C5" DiskId="1">
+						<File Id="Hardcodet.Wpf.TaskbarNotification.dll" Name="Hardcodet.Wpf.TaskbarNotification.dll" Source="..\EventMessenger\bin\Release\Hardcodet.Wpf.TaskbarNotification.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="IonicZipReducedDll" Guid="989A03F6-C272-4F12-BE3E-65E873ADF814" DiskId="1">
+						<File Id="Ionic.Zip.Reduced.dll" Name="Ionic.Zip.Reduced.dll" Source="..\EventMessenger\bin\Release\Ionic.Zip.Reduced.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="KnxBusCommonDll" Guid="5D15A881-EFDF-4C9E-A42D-6A756DDD5D52" DiskId="1">
+						<File Id="Knx.Bus.Common.dll" Name="Knx.Bus.Common.dll" Source="..\EventMessenger\bin\Release\Knx.Bus.Common.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="KnxFalconDll" Guid="F3DB323A-49B6-4550-85E3-2C4EDAAE7AA6" DiskId="1">
+						<File Id="Knx.Falcon.dll" Name="Knx.Falcon.dll" Source="..\EventMessenger\bin\Release\Knx.Falcon.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="KnxFalconSdkDll" Guid="81DFB63F-E2EB-4D89-B7B3-5501F805E632" DiskId="1">
+						<File Id="Knx.Falcon.Sdk.dll" Name="Knx.Falcon.Sdk.dll" Source="..\EventMessenger\bin\Release\Knx.Falcon.Sdk.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="KnxFalconUsbAccessWindowsDll" Guid="25A80BCC-63A0-4543-A0B7-8FE7571B15D6" DiskId="1">
+						<File Id="Knx.Falcon.UsbAccessWindows.dll" Name="Knx.Falcon.UsbAccessWindows.dll" Source="..\EventMessenger\bin\Release\Knx.Falcon.UsbAccessWindows.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="Log4netDll" Guid="D864B9FC-803A-455C-BD54-EC13DD1A7624" DiskId="1">
+						<File Id="log4net.dll" Name="log4net.dll" Source="..\EventMessenger\bin\Release\log4net.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="MicrosoftPracticesServiceLocationDll" Guid="948A41CF-6E4F-41F3-9E76-74F28F9BE095" DiskId="1">
+						<File Id="Microsoft.Practices.ServiceLocation.dll" Name="Microsoft.Practices.ServiceLocation.dll" Source="..\EventMessenger\bin\Release\Microsoft.Practices.ServiceLocation.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="NewtonsoftJsonDll" Guid="020361A9-C2E6-42DA-BEA4-A670B9A834F6" DiskId="1">
+						<File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="..\EventMessenger\bin\Release\Newtonsoft.Json.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="QuartzDll" Guid="D27D1F9E-8ED0-4FDB-AE68-48CBEF6FF9CF" DiskId="1">
+						<File Id="Quartz.dll" Name="Quartz.dll" Source="..\EventMessenger\bin\Release\Quartz.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="StringTemplateDll" Guid="6AAD8A1C-7767-43C6-B5F8-FA560D73E266" DiskId="1">
+						<File Id="StringTemplate.dll" Name="StringTemplate.dll" Source="..\EventMessenger\bin\Release\StringTemplate.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="SystemNetHttpFormattingDll" Guid="9A1C331A-8369-4C35-9D15-AAF408AE5644" DiskId="1">
+						<File Id="System.Net.Http.Formatting.dll" Name="System.Net.Http.Formatting.dll" Source="..\EventMessenger\bin\Release\System.Net.Http.Formatting.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="SystemWindowsInteractivityDll" Guid="70BB36CB-5968-4521-BDA4-B34AAE4FCEB8" DiskId="1">
+						<File Id="System.Windows.Interactivity.dll" Name="System.Windows.Interactivity.dll" Source="..\EventMessenger\bin\Release\System.Windows.Interactivity.dll" KeyPath="yes" />
+					</Component>
+					<Component Id="TelegramBotDll" Guid="CFCB532F-3B3D-447D-A5BE-46D037FDB17C" DiskId="1">
+						<File Id="Telegram.Bot.dll" Name="Telegram.Bot.dll" Source="..\EventMessenger\bin\Release\Telegram.Bot.dll" KeyPath="yes" />
+					</Component>
+				</Directory>
+			</Directory>
+			<Directory Id="config" Name="config">
+				<Component Id="Event_cmdExe" Guid="72ED346B-29EA-4340-9DEF-9B359C40F636" DiskId="1">
+					<File Id="event_cmd.exe" Name="event_cmd.exe" Source="..\event_cmd\Release\event_cmd.exe" KeyPath="yes" />
+				</Component>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>
