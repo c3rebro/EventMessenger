@@ -1,4 +1,4 @@
-# EventMessenger #
+![](http://www.eventmessenger.hyperstack.de/logoEM.png) 
 
 The EventMessenger: Counterpart for the "Simplified EventManagement" of the LSM (Locking System Management) Basic Online 
 
